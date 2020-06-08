@@ -5,11 +5,9 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf ./dist && rimraf ./es && rimraf ./lib",
-    "dev": "NODE_ENV=dev rollup -c -w",
-    "build": "npm run clean && npm run test && NODE_ENV=prod rollup -c",
-    "generator": "node scripts/doc2test.js",
-    "codecov": "codecov --token=36a38c5b-da51-4595-b331-d82a3fcfd49b",
-    "test": "jest --verbose --runInBand --coverage",
+    "dev": "cross-env NODE_ENV=development rollup -c -w",
+    "test": "node test/test.js",
+    "build": "npm run clean && ross-env NODE_ENV=production rollup -c",
     "release": "echo $npm_package_version"
   },
   "typings": "lib/main.d.ts",
@@ -25,9 +23,12 @@
     "@rollup/plugin-commonjs": "^13.0.0",
     "@rollup/plugin-node-resolve": "^8.0.1",
     "@types/jest": "^25.2.3",
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/parser": "^3.1.0",
     "babel-core": "^6.26.3",
     "babel-jest": "^26.0.1",
     "buble": "^0.20.0",
+    "eslint": "^7.2.0",
     "jest": "^26.0.1",
     "jsdoc-to-markdown": "^6.0.1",
     "rimraf": "^3.0.2",
@@ -45,6 +46,7 @@
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.10.1",
+    "cross-env": "^7.0.2",
     "jsdoc-babel": "^0.5.0"
   }
 }
