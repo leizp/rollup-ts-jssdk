@@ -1,0 +1,50 @@
+{
+  "name": "lzu_js_sdk",
+  "version": "0.0.0",
+  "author": "lzp",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf ./dist && rimraf ./es && rimraf ./lib",
+    "dev": "NODE_ENV=dev rollup -c -w",
+    "build": "npm run clean && npm run test && NODE_ENV=prod rollup -c",
+    "generator": "node scripts/doc2test.js",
+    "codecov": "codecov --token=36a38c5b-da51-4595-b331-d82a3fcfd49b",
+    "test": "jest --verbose --runInBand --coverage",
+    "release": "echo $npm_package_version"
+  },
+  "typings": "lib/main.d.ts",
+  "main": "lib/lzu_js_sdk.js",
+  "module": "es/lzu_js_sdk.js",
+  "unpkg": "dist/lzu_js_sdk.min.js",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/polyfill": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-typescript": "^7.10.1",
+    "@babel/runtime": "^7.10.2",
+    "@rollup/plugin-commonjs": "^13.0.0",
+    "@rollup/plugin-node-resolve": "^8.0.1",
+    "@types/jest": "^25.2.3",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^26.0.1",
+    "buble": "^0.20.0",
+    "jest": "^26.0.1",
+    "jsdoc-to-markdown": "^6.0.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.15.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-serve": "^1.0.1",
+    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "rollup-plugin-uglify": "^6.0.4",
+    "ts-jest": "^26.1.0",
+    "typescript": "^3.9.5",
+    "uglify": "^0.1.5",
+    "uglify-es": "^3.3.9"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "jsdoc-babel": "^0.5.0"
+  }
+}
