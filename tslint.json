@@ -58,8 +58,8 @@
     "indent": [
       true,
       "spaces",
-      4
-    ], // 每行开始以4个空格符开始
+      2
+    ], // 每行开始以2个空格符开始
     "linebreak-style": [
       true,
       "CR/LF"
