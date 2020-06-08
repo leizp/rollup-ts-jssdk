@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf ./dist && rimraf ./es && rimraf ./lib",
     "dev": "cross-env NODE_ENV=development rollup -c -w",
-    "test": "node test/test.js",
+    "test": "jest --verbose --runInBand --coverage",
     "build": "npm run clean && ross-env NODE_ENV=production rollup -c",
     "release": "echo $npm_package_version"
   },
@@ -40,6 +40,7 @@
     "rollup-plugin-typescript2": "^0.27.1",
     "rollup-plugin-uglify": "^6.0.4",
     "ts-jest": "^26.1.0",
+    "tslint": "^6.1.2",
     "typescript": "^3.9.5",
     "uglify": "^0.1.5",
     "uglify-es": "^3.3.9"
